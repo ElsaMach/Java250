@@ -206,13 +206,22 @@ public class ExportController {
                 Cell cellPrixTotal = rowTotal.createCell(3);
                 cellPrixTotal.setCellValue(facture.getTotal());
 
+                //autosize des colonnes
+                sheet2.autoSizeColumn(0);
+                sheet2.autoSizeColumn(1);
+                sheet2.autoSizeColumn(2);
+                sheet2.autoSizeColumn(3);
+                
                 //Incrémentation de i
                 i++ ;
             }
 
+            //autosize des colonnes
+            sheet.autoSizeColumn(0, true);
             sheet.autoSizeColumn(1, true);
             sheet.autoSizeColumn(2, true);
             sheet.autoSizeColumn(3, true);
+
         }
 
         workbook.write(response.getOutputStream());
